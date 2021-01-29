@@ -73,10 +73,13 @@
                                 </div>
                                 <div>
                                   <h2 class="text-green">
-                                    {{ usuario.nombres }} {{ usuario.apellidos }}
+                                    {{ usuario.nombres }}
+                                    {{ usuario.apellidos }}
                                   </h2>
                                   <p class="card-text">
-                                    {{ usuario.tipo == 1 ? "ADMIN" : "USUARIO" }}
+                                    {{
+                                      usuario.tipo == 1 ? "ADMIN" : "USUARIO"
+                                    }}
                                   </p>
                                 </div>
                               </div>
@@ -88,7 +91,7 @@
                                 >
                                   ACTIVO
                                 </div>
-                                
+
                                 <div class="mt-2">
                                   <button
                                     class="btn btn-xs btn-indigo-soft ml-2 mr-2 text-indigo"
@@ -105,12 +108,7 @@
                                   <!-- Si estado 0, o 2 :: 0: No plubicado, 1: Publicado, 2: Obervado -->
                                   <button
                                     class="btn btn-xs btn-yellow ml-2 mr-2 text-white"
-                                    @click="
-                                      updateEstado(
-                                        usuario.id,
-                                        0
-                                      )
-                                    "
+                                    @click="updateEstado(usuario.id, 0)"
                                   >
                                     <i class="fas fa-hand-paper"></i>
                                     <span class="hide-on-mobile">Observar</span>
@@ -133,10 +131,13 @@
                                 </div>
                                 <div>
                                   <h2 class="text-yellow">
-                                    {{ usuario.nombres }} {{ usuario.apellidos }}
+                                    {{ usuario.nombres }}
+                                    {{ usuario.apellidos }}
                                   </h2>
                                   <p class="card-text">
-                                    {{ usuario.tipo == 1 ? "ADMIN" : "USUARIO" }}
+                                    {{
+                                      usuario.tipo == 1 ? "ADMIN" : "USUARIO"
+                                    }}
                                   </p>
                                 </div>
                               </div>
@@ -160,12 +161,7 @@
 
                                   <button
                                     class="btn btn-xs btn-red-soft ml-2 mr-2 text-red"
-                                    @click="
-                                      updateEstado(
-                                        usuario.id,
-                                        2
-                                      )
-                                    "
+                                    @click="updateEstado(usuario.id, 2)"
                                   >
                                     <i class="fas fa-trash-alt"></i>
                                     <span class="hide-on-mobile">Papelera</span>
@@ -176,12 +172,7 @@
                                   <!-- Si estado 0, o 2 :: 0: No plubicado, 1: Publicado, 2: Obervado -->
                                   <button
                                     class="btn btn-xs btn-green-soft ml-2 mr-2 text-green"
-                                    v-on:click="
-                                      updateEstado(
-                                        usuario.id,
-                                        1
-                                      )
-                                    "
+                                    v-on:click="updateEstado(usuario.id, 1)"
                                   >
                                     <i class="fas fa-laptop"></i>
                                     <span class="hide-on-mobile"> Activar</span>
@@ -204,10 +195,13 @@
                                 </div>
                                 <div>
                                   <h2 class="text-red">
-                                    {{ usuario.nombres }} {{ usuario.apellidos }}
+                                    {{ usuario.nombres }}
+                                    {{ usuario.apellidos }}
                                   </h2>
                                   <p class="card-text">
-                                    {{ usuario.tipo == 1 ? "ADMIN" : "USUARIO" }}
+                                    {{
+                                      usuario.tipo == 1 ? "ADMIN" : "USUARIO"
+                                    }}
                                   </p>
                                 </div>
                               </div>
@@ -224,23 +218,20 @@
                                   <!-- Si estado 0, o 2 :: 0: No plubicado, 1: Publicado, 2: Obervado -->
                                   <button
                                     class="btn btn-xs btn-yellow ml-2 mr-2 text-white"
-                                    @click="
-                                      updateEstado(
-                                        usuario.id,
-                                        0
-                                      )
-                                    "
+                                    @click="updateEstado(usuario.id, 0)"
                                   >
                                     <i class="fas fa-flag"></i>
-                                    <span class="hide-on-mobile"> Observar</span>
+                                    <span class="hide-on-mobile">
+                                      Observar</span
+                                    >
                                   </button>
                                   <button
                                     class="btn btn-xs btn-red ml-2 mr-2 text-white"
                                     @click="openModalDelete(index)"
                                   >
                                     <i class="fas fa-trash-alt"></i>
-                                    <span class="hide-on-mobile"
-                                      > Eliminar por completo</span
+                                    <span class="hide-on-mobile">
+                                      Eliminar por completo</span
                                     >
                                   </button>
                                 </div>
@@ -344,7 +335,10 @@
                 <label class="small text-gray-600" for="leadCapFirstName"
                   >Estado</label
                 >
-                <select v-model="ToSave.estado" class="form-control rounded-pill">
+                <select
+                  v-model="ToSave.estado"
+                  class="form-control rounded-pill"
+                >
                   <option value="1" selected>Activo</option>
                   <option value="0">Observado</option>
                 </select>
@@ -445,7 +439,10 @@
                 <label class="small text-gray-600" for="leadCapFirstName"
                   >Tipo Usuario</label
                 >
-                <select v-model="ToUpdate.tipo" class="form-control rounded-pill">
+                <select
+                  v-model="ToUpdate.tipo"
+                  class="form-control rounded-pill"
+                >
                   <option value="0" selected>Usuario</option>
                   <option value="1">Admin</option>
                 </select>
@@ -454,7 +451,10 @@
                 <label class="small text-gray-600" for="leadCapFirstName"
                   >Estado</label
                 >
-                <select v-model="ToUpdate.estado" class="form-control rounded-pill">
+                <select
+                  v-model="ToUpdate.estado"
+                  class="form-control rounded-pill"
+                >
                   <option value="1" selected>Activo</option>
                   <option value="0">Observado</option>
                 </select>
@@ -625,7 +625,11 @@ export default {
           .then(response => {
             //handle response
             if (!response.data.error) {
-              this.$root.$emit("bv::hide::modal", "modalSave", "#btnSaveUsuario");
+              this.$root.$emit(
+                "bv::hide::modal",
+                "modalSave",
+                "#btnSaveUsuario"
+              );
               this.getUsuarios();
             } else {
               console.log("Erro on save!");
@@ -678,8 +682,7 @@ export default {
       _data.set("estado", _estado);
       axios({
         method: "post",
-        url:
-          this.host + "/viudas/api/actions/usuario.update.estado.php",
+        url: this.host + "/viudas/api/actions/usuario.update.estado.php",
         data: _data,
         headers: {
           "content-type": "application/x-www-form-urlencoded"
@@ -762,7 +765,6 @@ export default {
       this.ToSave.password = "";
       this.ToSave.tipo = 0;
       this.ToSave.estado = 0;
-      
     },
     openModalUpdate: function(_index) {
       this.$root.$emit("bv::show::modal", "modalUpdate", "#btnUpdate");

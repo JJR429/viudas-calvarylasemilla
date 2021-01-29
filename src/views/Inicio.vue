@@ -9,29 +9,31 @@
                 Bienvenido al ministerio de viudas de <b>Calvary la Semilla</b>
               </h1>
               <p class="page-header-text">
-                Estas son las personas que estamos ayudando, si quieres tener mayor información contáctanos por nuestra web o redes sociales.
+                Estas son las personas que estamos ayudando, si quieres tener
+                mayor información contáctanos por nuestra web o redes sociales.
               </p>
-              
 
               <div class="">
-                  <div class="row justify-content-center">
-                    <div class="col-xl-4 mb-5">
-                      <img src="https://calvarylasemilla.com/wp-content/uploads/2018/03/faviconcs.png" width="100px">
-                      <h1 class="text-dark font-weight-bold">
-                        Calvary la Semilla
-                      </h1>
-                      <p class="page-header-text">
-                        Lista de Viudas
-                      </p>
+                <div class="row justify-content-center">
+                  <div class="col-xl-4 mb-5">
+                    <img
+                      src="https://calvarylasemilla.com/wp-content/uploads/2018/03/faviconcs.png"
+                      width="100px"
+                    />
+                    <h1 class="text-dark font-weight-bold">
+                      Calvary la Semilla
+                    </h1>
+                    <p class="page-header-text">
+                      Lista de Viudas
+                    </p>
 
-                      <hr />
-                      <h2>Resumen</h2>
-                      <strong>Viudas Activas:</strong> {{viudas.length}}<br />
-                    </div>
+                    <hr />
+                    <h2>Resumen</h2>
+                    <strong>Viudas Activas:</strong> {{ viudas.length }}<br />
+                  </div>
 
-                    <div class="col-xl-8 col-lg-10">
-                      
-                      <div class="mb-2" v-if="!loanding">
+                  <div class="col-xl-8 col-lg-10">
+                    <div class="mb-2" v-if="!loanding">
                       <div v-if="viudas.length > 0">
                         <div
                           class="card mx-2 my-2 px-2 py-2"
@@ -47,29 +49,27 @@
                                 {{ index + 1 }}
                               </div>
 
-
                               <div class="text-left title-tema">
                                 <h2 class="text-dark font-weight-bold">
                                   {{ viuda.nombres }} {{ viuda.apellidos }}
                                 </h2>
-                                  <span class="text-left">{{ viuda.region }} | {{ viuda.ciudad }}</span>
+                                <span class="text-left"
+                                  >{{ viuda.region }} | {{ viuda.ciudad }}</span
+                                >
                               </div>
                             </div>
                             <div>
-                                <router-link
+                              <router-link
                                 :to="{
-                                name: 'viuda',
-                                params: { id: viuda.id }
-                              }"
-
-                                  class="btn btn-sm btn-primary ml-2 mr-2"
-                                >
+                                  name: 'viuda',
+                                  params: { id: viuda.id }
+                                }"
+                                class="btn btn-sm btn-primary ml-2 mr-2"
+                              >
                                 Ver detalles
-                                </router-link>
+                              </router-link>
                             </div>
-
                           </div>
-                          
                         </div>
                       </div>
                       <div
@@ -84,14 +84,9 @@
                     <div class="mb-2" v-else>
                       <h2>Cargando...</h2>
                     </div>
-
-
-                  </div>
-
                   </div>
                 </div>
-
-
+              </div>
             </div>
           </div>
         </div>

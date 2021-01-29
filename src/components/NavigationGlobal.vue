@@ -1,12 +1,9 @@
 <template>
   <div class="navigation">
     <div v-if="typeUser == 'User'">
-      <nav
-        class="navbar navbar-marketing navbar-expand-lg bg-dark navbar-dark"
-      >
+      <nav class="navbar navbar-marketing navbar-expand-lg bg-dark navbar-dark">
         <div class="container">
-          <a class="navbar-brand text-warning" href="/"
-            >Viudas | Usuarios</a
+          <a class="navbar-brand text-warning" href="/">Viudas | Usuarios</a
           ><button
             class="navbar-toggler"
             type="button"
@@ -81,9 +78,7 @@
       </nav>
     </div>
     <div v-else class="nav-public">
-      <nav
-        class="navbar navbar-marketing navbar-expand-lg bg-dark navbar-dark"
-      >
+      <nav class="navbar navbar-marketing navbar-expand-lg bg-dark navbar-dark">
         <div class="container">
           <a class="navbar-brand text-primary" href="/">Viudas</a
           ><button
@@ -101,7 +96,13 @@
             <ul class="navbar-nav ml-auto mr-lg-5">
               <li class="nav-item"><a class="nav-link" href="/">Inicio </a></li>
               <li class="nav-item">
-                <a class="nav-link" href="https://calvarylasemilla.com/" target="_blank">Página de la iglesia <i class="fas fa-external-link-square-alt"></i></a>
+                <a
+                  class="nav-link"
+                  href="https://calvarylasemilla.com/"
+                  target="_blank"
+                  >Página de la iglesia
+                  <i class="fas fa-external-link-square-alt"></i
+                ></a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/admin">Admin</a>
@@ -110,9 +111,7 @@
                 <a class="nav-link" href="/viudas">Usuario</a>
               </li>
             </ul>
-            <a
-              class="btn-primary btn rounded-pill px-4 ml-lg-4"
-              href="/login"
+            <a class="btn-primary btn rounded-pill px-4 ml-lg-4" href="/login"
               >Entrar<i class="fas fa-arrow-right ml-1"></i
             ></a>
           </div>

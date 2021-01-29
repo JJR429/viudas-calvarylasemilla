@@ -18,12 +18,15 @@
                   Bienvenido Admin
                 </h1>
                 <p class="text-dark">
-                  Esta es la sección Admin, podrás verificar usuarios y ver lista de viudas.
+                  Esta es la sección Admin, podrás verificar usuarios y ver
+                  lista de viudas.
                 </p>
               </div>
               <div class="col-lg-4">
                 <div class="card rounded-lg text-dark">
-                  <div class="card-header py-4 text-dark">Te estamos esperando!</div>
+                  <div class="card-header py-4 text-dark">
+                    Te estamos esperando!
+                  </div>
                   <div class="card-body">
                     <form @submit.prevent="loginAdmin">
                       <div class="form-group">
@@ -91,10 +94,12 @@
                   Sección Usuarios
                 </div>
                 <h1 class="page-header-title">
-                  Entra para administrar la lista de <b class="text-primary">Viudas</b> de Calvary la Semilla!
+                  Entra para administrar la lista de
+                  <b class="text-primary">Viudas</b> de Calvary la Semilla!
                 </h1>
                 <p class="page-header-text">
-                 Esta opción es solo para usuarios registrados y verificados. Caso contrario pide a tu pastor que te de un acceso.
+                  Esta opción es solo para usuarios registrados y verificados.
+                  Caso contrario pide a tu pastor que te de un acceso.
                 </p>
                 <p class="text-white mt-5">¿Aún no tienes una cuenta?</p>
                 <router-link
@@ -194,7 +199,8 @@ export default {
       auth.loginAdmin(this.username, this.pass, loggedIn => {
         if (!loggedIn) {
           this.error = true;
-          this.error_message = "Usuario o Contraseña incorrectos. | Caso contrario comunicarse con Admin de Viudas.";
+          this.error_message =
+            "Usuario o Contraseña incorrectos. | Caso contrario comunicarse con Admin de Viudas.";
         } else {
           this.$router.replace(this.$route.query.redirect || "/admin");
         }

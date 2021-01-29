@@ -76,13 +76,17 @@
                                     {{ viuda.nombres }} {{ viuda.apellidos }}
                                   </h2>
                                   <p class="card-text">
-                                    <i class="fas fa-map-marker-alt"></i> {{ viuda.region }}, {{ viuda.ciudad }}
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    {{ viuda.region }}, {{ viuda.ciudad }}
                                   </p>
                                   <router-link
                                     :to="{
-                                    name: 'detalleViuda',
-                                    params: { id: viuda.id }
-                                  }" class="btn btn-sm btn-dark text-primary"> Ver Detalles
+                                      name: 'detalleViuda',
+                                      params: { id: viuda.id }
+                                    }"
+                                    class="btn btn-sm btn-dark text-primary"
+                                  >
+                                    Ver Detalles
                                   </router-link>
                                 </div>
                               </div>
@@ -94,7 +98,7 @@
                                 >
                                   ACTIVO
                                 </div>
-                                
+
                                 <div class="mt-2">
                                   <button
                                     class="btn btn-xs btn-indigo-soft ml-2 mr-2 text-indigo"
@@ -111,15 +115,12 @@
                                   <!-- Si estado 0, o 2 :: 0: No plubicado, 1: Publicado, 2: Obervado -->
                                   <button
                                     class="btn btn-xs btn-yellow ml-2 mr-2 text-white"
-                                    @click="
-                                      updateEstado(
-                                        viuda.id,
-                                        0
-                                      )
-                                    "
+                                    @click="updateEstado(viuda.id, 0)"
                                   >
                                     <i class="fas fa-hand-paper"></i>
-                                    <span class="hide-on-mobile"> Observar</span>
+                                    <span class="hide-on-mobile">
+                                      Observar</span
+                                    >
                                   </button>
                                 </div>
                               </div>
@@ -142,13 +143,17 @@
                                     {{ viuda.nombres }} {{ viuda.apellidos }}
                                   </h2>
                                   <p class="card-text">
-                                    <i class="fas fa-map-marker-alt"></i> {{ viuda.region }}, {{ viuda.ciudad }}
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    {{ viuda.region }}, {{ viuda.ciudad }}
                                   </p>
                                   <router-link
                                     :to="{
-                                    name: 'detalleViuda',
-                                    params: { id: viuda.id }
-                                  }" class="btn btn-sm btn-dark text-primary"> Ver Detalles
+                                      name: 'detalleViuda',
+                                      params: { id: viuda.id }
+                                    }"
+                                    class="btn btn-sm btn-dark text-primary"
+                                  >
+                                    Ver Detalles
                                   </router-link>
                                 </div>
                               </div>
@@ -172,15 +177,12 @@
 
                                   <button
                                     class="btn btn-xs btn-red-soft ml-2 mr-2 text-red"
-                                    @click="
-                                      updateEstado(
-                                        viuda.id,
-                                        2
-                                      )
-                                    "
+                                    @click="updateEstado(viuda.id, 2)"
                                   >
                                     <i class="fas fa-trash-alt"></i>
-                                    <span class="hide-on-mobile"> Papelera</span>
+                                    <span class="hide-on-mobile">
+                                      Papelera</span
+                                    >
                                   </button>
                                 </div>
                                 <!-- If es director, mostrar estas opciones -->
@@ -188,12 +190,7 @@
                                   <!-- Si estado 0, o 2 :: 0: No plubicado, 1: Publicado, 2: Obervado -->
                                   <button
                                     class="btn btn-xs btn-green-soft ml-2 mr-2 text-green"
-                                    v-on:click="
-                                      updateEstado(
-                                        viuda.id,
-                                        1
-                                      )
-                                    "
+                                    v-on:click="updateEstado(viuda.id, 1)"
                                   >
                                     <i class="fas fa-laptop"></i>
                                     <span class="hide-on-mobile"> Activar</span>
@@ -219,13 +216,17 @@
                                     {{ viuda.nombres }} {{ viuda.apellidos }}
                                   </h2>
                                   <p class="card-text">
-                                    <i class="fas fa-map-marker-alt"></i> {{ viuda.region }}, {{ viuda.ciudad }}
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    {{ viuda.region }}, {{ viuda.ciudad }}
                                   </p>
                                   <router-link
                                     :to="{
-                                    name: 'detalleViuda',
-                                    params: { id: viuda.id }
-                                  }" class="btn btn-sm btn-dark text-primary"> Ver Detalles
+                                      name: 'detalleViuda',
+                                      params: { id: viuda.id }
+                                    }"
+                                    class="btn btn-sm btn-dark text-primary"
+                                  >
+                                    Ver Detalles
                                   </router-link>
                                 </div>
                               </div>
@@ -242,23 +243,20 @@
                                   <!-- Si estado 0, o 2 :: 0: No plubicado, 1: Publicado, 2: Obervado -->
                                   <button
                                     class="btn btn-xs btn-yellow ml-2 mr-2 text-white"
-                                    @click="
-                                      updateEstado(
-                                        viuda.id,
-                                        0
-                                      )
-                                    "
+                                    @click="updateEstado(viuda.id, 0)"
                                   >
                                     <i class="fas fa-flag"></i>
-                                    <span class="hide-on-mobile"> Observar</span>
+                                    <span class="hide-on-mobile">
+                                      Observar</span
+                                    >
                                   </button>
                                   <button
                                     class="btn btn-xs btn-red ml-2 mr-2 text-white"
                                     @click="openModalDelete(index)"
                                   >
                                     <i class="fas fa-trash-alt"></i>
-                                    <span class="hide-on-mobile"
-                                      > Eliminar por completo</span
+                                    <span class="hide-on-mobile">
+                                      Eliminar por completo</span
                                     >
                                   </button>
                                 </div>
@@ -395,18 +393,48 @@
 
             <div class="form-row">
               <div class="form-group col-md-6 text-left">
-                <b-form-group label="¿Tiene Trabajo?" class="small text-gray-600">
+                <b-form-group
+                  label="¿Tiene Trabajo?"
+                  class="small text-gray-600"
+                >
                   <div class="d-flex">
-                    <b-form-radio class="mr-2" v-model="ToSave.tiene_trabajo" name="radio_tiene_trabajo" value="1">SI</b-form-radio>
-                    <b-form-radio class="ml-2" v-model="ToSave.tiene_trabajo" name="radio_tiene_trabajo" value="0">NO</b-form-radio>
+                    <b-form-radio
+                      class="mr-2"
+                      v-model="ToSave.tiene_trabajo"
+                      name="radio_tiene_trabajo"
+                      value="1"
+                      >SI</b-form-radio
+                    >
+                    <b-form-radio
+                      class="ml-2"
+                      v-model="ToSave.tiene_trabajo"
+                      name="radio_tiene_trabajo"
+                      value="0"
+                      >NO</b-form-radio
+                    >
                   </div>
                 </b-form-group>
               </div>
               <div class="form-group col-md-6 text-left">
-                <b-form-group label="¿Trabajo Remunerado?" class="small text-gray-600">
+                <b-form-group
+                  label="¿Trabajo Remunerado?"
+                  class="small text-gray-600"
+                >
                   <div class="d-flex">
-                    <b-form-radio class="mr-2" v-model="ToSave.trabajo_remunerado" name="radio_trabajo_remunerado" value="1">SI</b-form-radio>
-                    <b-form-radio class="ml-2" v-model="ToSave.trabajo_remunerado" name="radio_trabajo_remunerado" value="0">NO</b-form-radio>
+                    <b-form-radio
+                      class="mr-2"
+                      v-model="ToSave.trabajo_remunerado"
+                      name="radio_trabajo_remunerado"
+                      value="1"
+                      >SI</b-form-radio
+                    >
+                    <b-form-radio
+                      class="ml-2"
+                      v-model="ToSave.trabajo_remunerado"
+                      name="radio_trabajo_remunerado"
+                      value="0"
+                      >NO</b-form-radio
+                    >
                   </div>
                 </b-form-group>
               </div>
@@ -414,18 +442,48 @@
 
             <div class="form-row">
               <div class="form-group col-md-6 text-left">
-                <b-form-group label="¿Tiene Pensión 65?" class="small text-gray-600">
+                <b-form-group
+                  label="¿Tiene Pensión 65?"
+                  class="small text-gray-600"
+                >
                   <div class="d-flex">
-                    <b-form-radio class="mr-2" v-model="ToSave.tiene_pension_65" name="radio_tiene_pension_65" value="1">SI</b-form-radio>
-                    <b-form-radio class="ml-2" v-model="ToSave.tiene_pension_65" name="radio_tiene_pension_65" value="0">NO</b-form-radio>
+                    <b-form-radio
+                      class="mr-2"
+                      v-model="ToSave.tiene_pension_65"
+                      name="radio_tiene_pension_65"
+                      value="1"
+                      >SI</b-form-radio
+                    >
+                    <b-form-radio
+                      class="ml-2"
+                      v-model="ToSave.tiene_pension_65"
+                      name="radio_tiene_pension_65"
+                      value="0"
+                      >NO</b-form-radio
+                    >
                   </div>
                 </b-form-group>
               </div>
               <div class="form-group col-md-6 text-left">
-                <b-form-group label="¿Tiene Seguro?" class="small text-gray-600">
+                <b-form-group
+                  label="¿Tiene Seguro?"
+                  class="small text-gray-600"
+                >
                   <div class="d-flex">
-                    <b-form-radio class="mr-2" v-model="ToSave.tiene_seguro" name="radio_tiene_seguro" value="1">SI</b-form-radio>
-                    <b-form-radio class="ml-2" v-model="ToSave.tiene_seguro" name="radio_tiene_seguro" value="0">NO</b-form-radio>
+                    <b-form-radio
+                      class="mr-2"
+                      v-model="ToSave.tiene_seguro"
+                      name="radio_tiene_seguro"
+                      value="1"
+                      >SI</b-form-radio
+                    >
+                    <b-form-radio
+                      class="ml-2"
+                      v-model="ToSave.tiene_seguro"
+                      name="radio_tiene_seguro"
+                      value="0"
+                      >NO</b-form-radio
+                    >
                   </div>
                 </b-form-group>
               </div>
@@ -433,10 +491,25 @@
 
             <div class="form-row">
               <div class="form-group col-md-6 text-left">
-                <b-form-group label="¿Tiene Discapacidad?" class="small text-gray-600">
+                <b-form-group
+                  label="¿Tiene Discapacidad?"
+                  class="small text-gray-600"
+                >
                   <div class="d-flex">
-                    <b-form-radio class="mr-2" v-model="ToSave.tiene_discapacidad" name="radio_tiene_discapacidad" value="1">SI</b-form-radio>
-                    <b-form-radio class="ml-2" v-model="ToSave.tiene_discapacidad" name="radio_tiene_discapacidad" value="0">NO</b-form-radio>
+                    <b-form-radio
+                      class="mr-2"
+                      v-model="ToSave.tiene_discapacidad"
+                      name="radio_tiene_discapacidad"
+                      value="1"
+                      >SI</b-form-radio
+                    >
+                    <b-form-radio
+                      class="ml-2"
+                      v-model="ToSave.tiene_discapacidad"
+                      name="radio_tiene_discapacidad"
+                      value="0"
+                      >NO</b-form-radio
+                    >
                   </div>
                 </b-form-group>
               </div>
@@ -444,7 +517,11 @@
                 <label class="small text-gray-600" for="leadCapFirstName"
                   >Discapacidad</label
                 >
-                <input :disabled="ToSave.tiene_discapacidad == 0 || ToSave.tiene_discapacidad == null"
+                <input
+                  :disabled="
+                    ToSave.tiene_discapacidad == 0 ||
+                      ToSave.tiene_discapacidad == null
+                  "
                   v-model="ToSave.discapacidad"
                   class="form-control"
                   type="text"
@@ -454,10 +531,25 @@
 
             <div class="form-row">
               <div class="form-group col-md-6 text-left">
-                <b-form-group label="Toma Medicamentos?" class="small text-gray-600">
+                <b-form-group
+                  label="Toma Medicamentos?"
+                  class="small text-gray-600"
+                >
                   <div class="d-flex">
-                    <b-form-radio class="mr-2" v-model="ToSave.toma_medicamentos" name="radio_toma_medicamentos" value="1">SI</b-form-radio>
-                    <b-form-radio class="ml-2" v-model="ToSave.toma_medicamentos" name="radio_toma_medicamentos" value="0">NO</b-form-radio>
+                    <b-form-radio
+                      class="mr-2"
+                      v-model="ToSave.toma_medicamentos"
+                      name="radio_toma_medicamentos"
+                      value="1"
+                      >SI</b-form-radio
+                    >
+                    <b-form-radio
+                      class="ml-2"
+                      v-model="ToSave.toma_medicamentos"
+                      name="radio_toma_medicamentos"
+                      value="0"
+                      >NO</b-form-radio
+                    >
                   </div>
                 </b-form-group>
               </div>
@@ -465,7 +557,11 @@
                 <label class="small text-gray-600" for="leadCapFirstName"
                   >Descripción de Medicamentos</label
                 >
-                <textarea :disabled="ToSave.toma_medicamentos == 0 || ToSave.toma_medicamentos == null"
+                <textarea
+                  :disabled="
+                    ToSave.toma_medicamentos == 0 ||
+                      ToSave.toma_medicamentos == null
+                  "
                   v-model="ToSave.descripcion_medicamentos"
                   class="form-control"
                 />
@@ -507,26 +603,68 @@
               <div class="form-group col-md-6 text-left">
                 <b-form-group label="Sabe de Dios?" class="small text-gray-600">
                   <div class="d-flex">
-                    <b-form-radio class="mr-2" v-model="ToSave.sabe_de_dios" name="radio_sabe_de_dios" value="1">SI</b-form-radio>
-                    <b-form-radio class="ml-2" v-model="ToSave.sabe_de_dios" name="radio_sabe_de_dios" value="0">NO</b-form-radio>
+                    <b-form-radio
+                      class="mr-2"
+                      v-model="ToSave.sabe_de_dios"
+                      name="radio_sabe_de_dios"
+                      value="1"
+                      >SI</b-form-radio
+                    >
+                    <b-form-radio
+                      class="ml-2"
+                      v-model="ToSave.sabe_de_dios"
+                      name="radio_sabe_de_dios"
+                      value="0"
+                      >NO</b-form-radio
+                    >
                   </div>
                 </b-form-group>
               </div>
               <div class="form-group col-md-6 text-left">
-                <b-form-group label="¿Conoce de Dios?" class="small text-gray-600">
+                <b-form-group
+                  label="¿Conoce de Dios?"
+                  class="small text-gray-600"
+                >
                   <div class="d-flex">
-                    <b-form-radio class="mr-2" v-model="ToSave.conoce_de_dios" name="radio_conoce_de_dios" value="1">SI</b-form-radio>
-                    <b-form-radio class="ml-2" v-model="ToSave.conoce_de_dios" name="radio_conoce_de_dios" value="0">NO</b-form-radio>
+                    <b-form-radio
+                      class="mr-2"
+                      v-model="ToSave.conoce_de_dios"
+                      name="radio_conoce_de_dios"
+                      value="1"
+                      >SI</b-form-radio
+                    >
+                    <b-form-radio
+                      class="ml-2"
+                      v-model="ToSave.conoce_de_dios"
+                      name="radio_conoce_de_dios"
+                      value="0"
+                      >NO</b-form-radio
+                    >
                   </div>
                 </b-form-group>
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-6 text-left">
-                <b-form-group label="¿Tiene una relación con Jesus?" class="small text-gray-600">
+                <b-form-group
+                  label="¿Tiene una relación con Jesus?"
+                  class="small text-gray-600"
+                >
                   <div class="d-flex">
-                    <b-form-radio class="mr-2" v-model="ToSave.relacion_con_jesus" name="radio_relacion_con_jesus" value="1">SI</b-form-radio>
-                    <b-form-radio class="ml-2" v-model="ToSave.relacion_con_jesus" name="radio_relacion_con_jesus" value="0">NO</b-form-radio>
+                    <b-form-radio
+                      class="mr-2"
+                      v-model="ToSave.relacion_con_jesus"
+                      name="radio_relacion_con_jesus"
+                      value="1"
+                      >SI</b-form-radio
+                    >
+                    <b-form-radio
+                      class="ml-2"
+                      v-model="ToSave.relacion_con_jesus"
+                      name="radio_relacion_con_jesus"
+                      value="0"
+                      >NO</b-form-radio
+                    >
                   </div>
                 </b-form-group>
               </div>
@@ -534,7 +672,11 @@
                 <label class="small text-gray-600" for="leadCapFirstName"
                   >Fecha que acepto Jesus</label
                 >
-                <input :disabled="ToSave.relacion_con_jesus == 0 || ToSave.relacion_con_jesus == null"
+                <input
+                  :disabled="
+                    ToSave.relacion_con_jesus == 0 ||
+                      ToSave.relacion_con_jesus == null
+                  "
                   v-model="ToSave.fecha_de_aceptacion"
                   class="form-control"
                   type="date"
@@ -544,10 +686,25 @@
 
             <div class="form-row">
               <div class="form-group col-md-6 text-left">
-                <b-form-group label="¿Asite a una Iglesia?" class="small text-gray-600">
+                <b-form-group
+                  label="¿Asite a una Iglesia?"
+                  class="small text-gray-600"
+                >
                   <div class="d-flex">
-                    <b-form-radio class="mr-2" v-model="ToSave.asiste_a_una_iglesia" name="radio_asiste_a_una_iglesia" value="1">SI</b-form-radio>
-                    <b-form-radio class="ml-2" v-model="ToSave.asiste_a_una_iglesia" name="radio_asiste_a_una_iglesia" value="0">NO</b-form-radio>
+                    <b-form-radio
+                      class="mr-2"
+                      v-model="ToSave.asiste_a_una_iglesia"
+                      name="radio_asiste_a_una_iglesia"
+                      value="1"
+                      >SI</b-form-radio
+                    >
+                    <b-form-radio
+                      class="ml-2"
+                      v-model="ToSave.asiste_a_una_iglesia"
+                      name="radio_asiste_a_una_iglesia"
+                      value="0"
+                      >NO</b-form-radio
+                    >
                   </div>
                 </b-form-group>
               </div>
@@ -555,7 +712,11 @@
                 <label class="small text-gray-600" for="leadCapFirstName"
                   >Nombre de Iglesia</label
                 >
-                <input :disabled="ToSave.asiste_a_una_iglesia == 0 || ToSave.asiste_a_una_iglesia == null"
+                <input
+                  :disabled="
+                    ToSave.asiste_a_una_iglesia == 0 ||
+                      ToSave.asiste_a_una_iglesia == null
+                  "
                   v-model="ToSave.iglesia"
                   class="form-control"
                   type="text"
@@ -568,28 +729,50 @@
                 <label class="small text-gray-600" for="leadCapFirstName"
                   >¿Desde que fecha asiste a una iglesia?</label
                 >
-                <input :disabled="ToSave.asiste_a_una_iglesia == 0 || ToSave.asiste_a_una_iglesia == null"
+                <input
+                  :disabled="
+                    ToSave.asiste_a_una_iglesia == 0 ||
+                      ToSave.asiste_a_una_iglesia == null
+                  "
                   v-model="ToSave.desde_que_fecha"
                   class="form-control"
                   type="date"
                 />
               </div>
               <div class="form-group col-md-6 text-left">
-                <b-form-group label="¿Le Interesa Jesus?" class="small text-gray-600">
+                <b-form-group
+                  label="¿Le Interesa Jesus?"
+                  class="small text-gray-600"
+                >
                   <div class="d-flex">
-                    <b-form-radio class="mr-2" v-model="ToSave.le_interesa_jesus" name="radio_le_interesa_jesus" value="1">SI</b-form-radio>
-                    <b-form-radio class="ml-2" v-model="ToSave.le_interesa_jesus" name="radio_le_interesa_jesus" value="0">NO</b-form-radio>
+                    <b-form-radio
+                      class="mr-2"
+                      v-model="ToSave.le_interesa_jesus"
+                      name="radio_le_interesa_jesus"
+                      value="1"
+                      >SI</b-form-radio
+                    >
+                    <b-form-radio
+                      class="ml-2"
+                      v-model="ToSave.le_interesa_jesus"
+                      name="radio_le_interesa_jesus"
+                      value="0"
+                      >NO</b-form-radio
+                    >
                   </div>
                 </b-form-group>
               </div>
             </div>
-            <hr>
+            <hr />
             <div class="form-row">
               <div class="form-group col-md-6 text-left">
                 <label class="small text-gray-600" for="leadCapFirstName"
-                  >Estado </label
+                  >Estado
+                </label>
+                <select
+                  v-model="ToSave.estado"
+                  class="form-control rounded-pill"
                 >
-                <select v-model="ToSave.estado" class="form-control rounded-pill">
                   <option value="1" selected>Activo</option>
                   <option value="0">Observado</option>
                 </select>
@@ -598,14 +781,9 @@
                 <label class="small text-gray-600" for="leadCapFirstName"
                   >Observaciones</label
                 >
-                <textarea
-                  v-model="ToSave.observaciones"
-                  class="form-control"
-                />
-                
+                <textarea v-model="ToSave.observaciones" class="form-control" />
               </div>
             </div>
-
 
             <div class="error-modal" v-if="ToSave.error">
               <span class="text-red"> {{ ToSave.error_message }}</span>
@@ -744,18 +922,48 @@
 
             <div class="form-row">
               <div class="form-group col-md-6 text-left">
-                <b-form-group label="¿Tiene Trabajo?" class="small text-gray-600">
+                <b-form-group
+                  label="¿Tiene Trabajo?"
+                  class="small text-gray-600"
+                >
                   <div class="d-flex">
-                    <b-form-radio class="mr-2" v-model="ToUpdate.tiene_trabajo" name="update_radio_tiene_trabajo" value="1">SI</b-form-radio>
-                    <b-form-radio class="ml-2" v-model="ToUpdate.tiene_trabajo" name="update_radio_tiene_trabajo" value="0">NO</b-form-radio>
+                    <b-form-radio
+                      class="mr-2"
+                      v-model="ToUpdate.tiene_trabajo"
+                      name="update_radio_tiene_trabajo"
+                      value="1"
+                      >SI</b-form-radio
+                    >
+                    <b-form-radio
+                      class="ml-2"
+                      v-model="ToUpdate.tiene_trabajo"
+                      name="update_radio_tiene_trabajo"
+                      value="0"
+                      >NO</b-form-radio
+                    >
                   </div>
                 </b-form-group>
               </div>
               <div class="form-group col-md-6 text-left">
-                <b-form-group label="¿Trabajo Remunerado?" class="small text-gray-600">
+                <b-form-group
+                  label="¿Trabajo Remunerado?"
+                  class="small text-gray-600"
+                >
                   <div class="d-flex">
-                    <b-form-radio class="mr-2" v-model="ToUpdate.trabajo_remunerado" name="update_radio_trabajo_remunerado" value="1">SI</b-form-radio>
-                    <b-form-radio class="ml-2" v-model="ToUpdate.trabajo_remunerado" name="update_radio_trabajo_remunerado" value="0">NO</b-form-radio>
+                    <b-form-radio
+                      class="mr-2"
+                      v-model="ToUpdate.trabajo_remunerado"
+                      name="update_radio_trabajo_remunerado"
+                      value="1"
+                      >SI</b-form-radio
+                    >
+                    <b-form-radio
+                      class="ml-2"
+                      v-model="ToUpdate.trabajo_remunerado"
+                      name="update_radio_trabajo_remunerado"
+                      value="0"
+                      >NO</b-form-radio
+                    >
                   </div>
                 </b-form-group>
               </div>
@@ -763,18 +971,48 @@
 
             <div class="form-row">
               <div class="form-group col-md-6 text-left">
-                <b-form-group label="¿Tiene Pensión 65?" class="small text-gray-600">
+                <b-form-group
+                  label="¿Tiene Pensión 65?"
+                  class="small text-gray-600"
+                >
                   <div class="d-flex">
-                    <b-form-radio class="mr-2" v-model="ToUpdate.tiene_pension_65" name="update_radio_tiene_pension_65" value="1">SI</b-form-radio>
-                    <b-form-radio class="ml-2" v-model="ToUpdate.tiene_pension_65" name="update_radio_tiene_pension_65" value="0">NO</b-form-radio>
+                    <b-form-radio
+                      class="mr-2"
+                      v-model="ToUpdate.tiene_pension_65"
+                      name="update_radio_tiene_pension_65"
+                      value="1"
+                      >SI</b-form-radio
+                    >
+                    <b-form-radio
+                      class="ml-2"
+                      v-model="ToUpdate.tiene_pension_65"
+                      name="update_radio_tiene_pension_65"
+                      value="0"
+                      >NO</b-form-radio
+                    >
                   </div>
                 </b-form-group>
               </div>
               <div class="form-group col-md-6 text-left">
-                <b-form-group label="¿Tiene Seguro?" class="small text-gray-600">
+                <b-form-group
+                  label="¿Tiene Seguro?"
+                  class="small text-gray-600"
+                >
                   <div class="d-flex">
-                    <b-form-radio class="mr-2" v-model="ToUpdate.tiene_seguro" name="update_radio_tiene_seguro" value="1">SI</b-form-radio>
-                    <b-form-radio class="ml-2" v-model="ToUpdate.tiene_seguro" name="update_radio_tiene_seguro" value="0">NO</b-form-radio>
+                    <b-form-radio
+                      class="mr-2"
+                      v-model="ToUpdate.tiene_seguro"
+                      name="update_radio_tiene_seguro"
+                      value="1"
+                      >SI</b-form-radio
+                    >
+                    <b-form-radio
+                      class="ml-2"
+                      v-model="ToUpdate.tiene_seguro"
+                      name="update_radio_tiene_seguro"
+                      value="0"
+                      >NO</b-form-radio
+                    >
                   </div>
                 </b-form-group>
               </div>
@@ -782,10 +1020,25 @@
 
             <div class="form-row">
               <div class="form-group col-md-6 text-left">
-                <b-form-group label="¿Tiene Discapacidad?" class="small text-gray-600">
+                <b-form-group
+                  label="¿Tiene Discapacidad?"
+                  class="small text-gray-600"
+                >
                   <div class="d-flex">
-                    <b-form-radio class="mr-2" v-model="ToUpdate.tiene_discapacidad" name="update_radio_tiene_discapacidad" value="1">SI</b-form-radio>
-                    <b-form-radio class="ml-2" v-model="ToUpdate.tiene_discapacidad" name="update_radio_tiene_discapacidad" value="0">NO</b-form-radio>
+                    <b-form-radio
+                      class="mr-2"
+                      v-model="ToUpdate.tiene_discapacidad"
+                      name="update_radio_tiene_discapacidad"
+                      value="1"
+                      >SI</b-form-radio
+                    >
+                    <b-form-radio
+                      class="ml-2"
+                      v-model="ToUpdate.tiene_discapacidad"
+                      name="update_radio_tiene_discapacidad"
+                      value="0"
+                      >NO</b-form-radio
+                    >
                   </div>
                 </b-form-group>
               </div>
@@ -793,7 +1046,11 @@
                 <label class="small text-gray-600" for="leadCapFirstName"
                   >Discapacidad</label
                 >
-                <input :disabled="ToUpdate.tiene_discapacidad == 0 || ToUpdate.tiene_discapacidad == null" 
+                <input
+                  :disabled="
+                    ToUpdate.tiene_discapacidad == 0 ||
+                      ToUpdate.tiene_discapacidad == null
+                  "
                   v-model="ToUpdate.discapacidad"
                   class="form-control"
                   type="text"
@@ -803,10 +1060,25 @@
 
             <div class="form-row">
               <div class="form-group col-md-6 text-left">
-                <b-form-group label="Toma Medicamentos?" class="small text-gray-600">
+                <b-form-group
+                  label="Toma Medicamentos?"
+                  class="small text-gray-600"
+                >
                   <div class="d-flex">
-                    <b-form-radio class="mr-2" v-model="ToUpdate.toma_medicamentos" name="update_radio_toma_medicamentos" value="1">SI</b-form-radio>
-                    <b-form-radio class="ml-2" v-model="ToUpdate.toma_medicamentos" name="update_radio_toma_medicamentos" value="0">NO</b-form-radio>
+                    <b-form-radio
+                      class="mr-2"
+                      v-model="ToUpdate.toma_medicamentos"
+                      name="update_radio_toma_medicamentos"
+                      value="1"
+                      >SI</b-form-radio
+                    >
+                    <b-form-radio
+                      class="ml-2"
+                      v-model="ToUpdate.toma_medicamentos"
+                      name="update_radio_toma_medicamentos"
+                      value="0"
+                      >NO</b-form-radio
+                    >
                   </div>
                 </b-form-group>
               </div>
@@ -814,7 +1086,11 @@
                 <label class="small text-gray-600" for="leadCapFirstName"
                   >Descripción de Medicamentos</label
                 >
-                <textarea  :disabled="ToUpdate.toma_medicamentos == 0 || ToUpdate.toma_medicamentos == null"
+                <textarea
+                  :disabled="
+                    ToUpdate.toma_medicamentos == 0 ||
+                      ToUpdate.toma_medicamentos == null
+                  "
                   v-model="ToUpdate.descripcion_medicamentos"
                   class="form-control"
                 />
@@ -856,26 +1132,68 @@
               <div class="form-group col-md-6 text-left">
                 <b-form-group label="Sabe de Dios?" class="small text-gray-600">
                   <div class="d-flex">
-                    <b-form-radio class="mr-2" v-model="ToUpdate.sabe_de_dios" name="update_radio_sabe_de_dios" value="1">SI</b-form-radio>
-                    <b-form-radio class="ml-2" v-model="ToUpdate.sabe_de_dios" name="update_radio_sabe_de_dios" value="0">NO</b-form-radio>
+                    <b-form-radio
+                      class="mr-2"
+                      v-model="ToUpdate.sabe_de_dios"
+                      name="update_radio_sabe_de_dios"
+                      value="1"
+                      >SI</b-form-radio
+                    >
+                    <b-form-radio
+                      class="ml-2"
+                      v-model="ToUpdate.sabe_de_dios"
+                      name="update_radio_sabe_de_dios"
+                      value="0"
+                      >NO</b-form-radio
+                    >
                   </div>
                 </b-form-group>
               </div>
               <div class="form-group col-md-6 text-left">
-                <b-form-group label="¿Conoce de Dios?" class="small text-gray-600">
+                <b-form-group
+                  label="¿Conoce de Dios?"
+                  class="small text-gray-600"
+                >
                   <div class="d-flex">
-                    <b-form-radio class="mr-2" v-model="ToUpdate.conoce_de_dios" name="update_radio_conoce_de_dios" value="1">SI</b-form-radio>
-                    <b-form-radio class="ml-2" v-model="ToUpdate.conoce_de_dios" name="update_radio_conoce_de_dios" value="0">NO</b-form-radio>
+                    <b-form-radio
+                      class="mr-2"
+                      v-model="ToUpdate.conoce_de_dios"
+                      name="update_radio_conoce_de_dios"
+                      value="1"
+                      >SI</b-form-radio
+                    >
+                    <b-form-radio
+                      class="ml-2"
+                      v-model="ToUpdate.conoce_de_dios"
+                      name="update_radio_conoce_de_dios"
+                      value="0"
+                      >NO</b-form-radio
+                    >
                   </div>
                 </b-form-group>
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-6 text-left">
-                <b-form-group label="¿Tiene una relación con Jesus?" class="small text-gray-600">
+                <b-form-group
+                  label="¿Tiene una relación con Jesus?"
+                  class="small text-gray-600"
+                >
                   <div class="d-flex">
-                    <b-form-radio class="mr-2" v-model="ToUpdate.relacion_con_jesus" name="update_radio_relacion_con_jesus" value="1">SI</b-form-radio>
-                    <b-form-radio class="ml-2" v-model="ToUpdate.relacion_con_jesus" name="update_radio_relacion_con_jesus" value="0">NO</b-form-radio>
+                    <b-form-radio
+                      class="mr-2"
+                      v-model="ToUpdate.relacion_con_jesus"
+                      name="update_radio_relacion_con_jesus"
+                      value="1"
+                      >SI</b-form-radio
+                    >
+                    <b-form-radio
+                      class="ml-2"
+                      v-model="ToUpdate.relacion_con_jesus"
+                      name="update_radio_relacion_con_jesus"
+                      value="0"
+                      >NO</b-form-radio
+                    >
                   </div>
                 </b-form-group>
               </div>
@@ -883,7 +1201,11 @@
                 <label class="small text-gray-600" for="leadCapFirstName"
                   >Fecha que acepto Jesus</label
                 >
-                <input :disabled="ToUpdate.relacion_con_jesus == 0 || ToUpdate.relacion_con_jesus == null"
+                <input
+                  :disabled="
+                    ToUpdate.relacion_con_jesus == 0 ||
+                      ToUpdate.relacion_con_jesus == null
+                  "
                   v-model="ToUpdate.fecha_de_aceptacion"
                   class="form-control"
                   type="date"
@@ -893,10 +1215,25 @@
 
             <div class="form-row">
               <div class="form-group col-md-6 text-left">
-                <b-form-group label="¿Asite a una Iglesia?" class="small text-gray-600">
+                <b-form-group
+                  label="¿Asite a una Iglesia?"
+                  class="small text-gray-600"
+                >
                   <div class="d-flex">
-                    <b-form-radio class="mr-2" v-model="ToUpdate.asiste_a_una_iglesia" name="update_radio_asiste_a_una_iglesia" value="1">SI</b-form-radio>
-                    <b-form-radio class="ml-2" v-model="ToUpdate.asiste_a_una_iglesia" name="update_radio_asiste_a_una_iglesia" value="0">NO</b-form-radio>
+                    <b-form-radio
+                      class="mr-2"
+                      v-model="ToUpdate.asiste_a_una_iglesia"
+                      name="update_radio_asiste_a_una_iglesia"
+                      value="1"
+                      >SI</b-form-radio
+                    >
+                    <b-form-radio
+                      class="ml-2"
+                      v-model="ToUpdate.asiste_a_una_iglesia"
+                      name="update_radio_asiste_a_una_iglesia"
+                      value="0"
+                      >NO</b-form-radio
+                    >
                   </div>
                 </b-form-group>
               </div>
@@ -904,7 +1241,11 @@
                 <label class="small text-gray-600" for="leadCapFirstName"
                   >Nombre de Iglesia</label
                 >
-                <input :disabled="ToUpdate.asiste_a_una_iglesia == 0 || ToUpdate.asiste_a_una_iglesia == null"
+                <input
+                  :disabled="
+                    ToUpdate.asiste_a_una_iglesia == 0 ||
+                      ToUpdate.asiste_a_una_iglesia == null
+                  "
                   v-model="ToUpdate.iglesia"
                   class="form-control"
                   type="text"
@@ -917,28 +1258,50 @@
                 <label class="small text-gray-600" for="leadCapFirstName"
                   >¿Desde que fecha asiste a una iglesia?</label
                 >
-                <input :disabled="ToUpdate.asiste_a_una_iglesia == 0 || ToUpdate.asiste_a_una_iglesia == null"
+                <input
+                  :disabled="
+                    ToUpdate.asiste_a_una_iglesia == 0 ||
+                      ToUpdate.asiste_a_una_iglesia == null
+                  "
                   v-model="ToUpdate.desde_que_fecha"
                   class="form-control"
                   type="date"
                 />
               </div>
               <div class="form-group col-md-6 text-left">
-                <b-form-group label="¿Le Interesa Jesus?" class="small text-gray-600">
+                <b-form-group
+                  label="¿Le Interesa Jesus?"
+                  class="small text-gray-600"
+                >
                   <div class="d-flex">
-                    <b-form-radio class="mr-2" v-model="ToUpdate.le_interesa_jesus" name="update_radio_le_interesa_jesus" value="1">SI</b-form-radio>
-                    <b-form-radio class="ml-2" v-model="ToUpdate.le_interesa_jesus" name="update_radio_le_interesa_jesus" value="0">NO</b-form-radio>
+                    <b-form-radio
+                      class="mr-2"
+                      v-model="ToUpdate.le_interesa_jesus"
+                      name="update_radio_le_interesa_jesus"
+                      value="1"
+                      >SI</b-form-radio
+                    >
+                    <b-form-radio
+                      class="ml-2"
+                      v-model="ToUpdate.le_interesa_jesus"
+                      name="update_radio_le_interesa_jesus"
+                      value="0"
+                      >NO</b-form-radio
+                    >
                   </div>
                 </b-form-group>
               </div>
             </div>
-            <hr>
+            <hr />
             <div class="form-row">
               <div class="form-group col-md-6 text-left">
                 <label class="small text-gray-600" for="leadCapFirstName"
-                  >Estado </label
+                  >Estado
+                </label>
+                <select
+                  v-model="ToUpdate.estado"
+                  class="form-control rounded-pill"
                 >
-                <select v-model="ToUpdate.estado" class="form-control rounded-pill">
                   <option value="1" selected>Activo</option>
                   <option value="0">Observado</option>
                 </select>
@@ -951,7 +1314,6 @@
                   v-model="ToUpdate.observaciones"
                   class="form-control"
                 />
-                
               </div>
             </div>
 
@@ -980,7 +1342,6 @@
         </b-modal>
         <!-- End modal -->
 
-
         <!-- Modal Delete Clase -->
         <b-modal id="modalDelete" centered>
           <template v-slot:modal-header="">
@@ -989,7 +1350,9 @@
             </h3>
           </template>
           <template v-slot:default="">
-            <h4 class="text-red">{{ ToDelete.nombres }} {{ ToDelete.apellidos }}</h4>
+            <h4 class="text-red">
+              {{ ToDelete.nombres }} {{ ToDelete.apellidos }}
+            </h4>
           </template>
           <template v-slot:modal-footer="{ ok, cancel }">
             <b-button
@@ -1071,7 +1434,7 @@ export default {
         error_message: ""
       },
       ToUpdate: {
-        id:0,
+        id: 0,
         nombres: "",
         apellidos: "",
         dni: "",
@@ -1167,7 +1530,10 @@ export default {
         _data.set("tiene_discapacidad", this.ToSave.tiene_discapacidad);
         _data.set("discapacidad", this.ToSave.discapacidad);
         _data.set("toma_medicamentos", this.ToSave.toma_medicamentos);
-        _data.set("descripcion_medicamentos", this.ToSave.descripcion_medicamentos);
+        _data.set(
+          "descripcion_medicamentos",
+          this.ToSave.descripcion_medicamentos
+        );
         _data.set("viuda_desde", this.ToSave.viuda_desde);
         _data.set("nombre_pareja", this.ToSave.nombre_pareja);
         _data.set("religion", this.ToSave.religion);
@@ -1226,7 +1592,10 @@ export default {
         _data.set("tiene_discapacidad", this.ToUpdate.tiene_discapacidad);
         _data.set("discapacidad", this.ToUpdate.discapacidad);
         _data.set("toma_medicamentos", this.ToUpdate.toma_medicamentos);
-        _data.set("descripcion_medicamentos", this.ToUpdate.descripcion_medicamentos);
+        _data.set(
+          "descripcion_medicamentos",
+          this.ToUpdate.descripcion_medicamentos
+        );
         _data.set("viuda_desde", this.ToUpdate.viuda_desde);
         _data.set("nombre_pareja", this.ToUpdate.nombre_pareja);
         _data.set("religion", this.ToUpdate.religion);
@@ -1270,8 +1639,7 @@ export default {
       _data.set("estado", _estado);
       axios({
         method: "post",
-        url:
-          this.host + "/viudas/api/actions/viuda.update.estado.php",
+        url: this.host + "/viudas/api/actions/viuda.update.estado.php",
         data: _data,
         headers: {
           "content-type": "application/x-www-form-urlencoded"
@@ -1362,37 +1730,36 @@ export default {
       this.$root.$emit("bv::show::modal", "modalSave", "#btnSave");
     },
     resetToSave: function() {
-      this.ToSave.nombres =  "";
-      this.ToSave.apellidos =  "";
-      this.ToSave.dni =  "";
-      this.ToSave.fecha_nacimiento =  "";
-      this.ToSave.region =  "";
-      this.ToSave.ciudad =  "";
-      this.ToSave.direccion =  "";
-      this.ToSave.referencia =  "";
-      this.ToSave.celular =  "";
-      this.ToSave.tiene_trabajo =  null;
-      this.ToSave.trabajo_remunerado =  null;
-      this.ToSave.tiene_pension_65 =  null;
-      this.ToSave.tiene_seguro =  null;
-      this.ToSave.tiene_discapacidad =  null;
-      this.ToSave.discapacidad =  "";
-      this.ToSave.toma_medicamentos =  null;
-      this.ToSave.descripcion_medicamentos =  "";
-      this.ToSave.viuda_desde =  "";
-      this.ToSave.nombre_pareja =  "";
-      this.ToSave.religion =  "";
-      this.ToSave.sabe_de_dios =  null;
-      this.ToSave.conoce_de_dios =  null;
-      this.ToSave.relacion_con_jesus =  null;
-      this.ToSave.fecha_de_aceptacion =  "";
-      this.ToSave.asiste_a_una_iglesia =  null;
-      this.ToSave.iglesia =  "";
-      this.ToSave.desde_que_fecha =  "";
-      this.ToSave.le_interesa_jesus =  null;
-      this.ToSave.observaciones =  null;
-      this.ToSave.estado =  1;
-      
+      this.ToSave.nombres = "";
+      this.ToSave.apellidos = "";
+      this.ToSave.dni = "";
+      this.ToSave.fecha_nacimiento = "";
+      this.ToSave.region = "";
+      this.ToSave.ciudad = "";
+      this.ToSave.direccion = "";
+      this.ToSave.referencia = "";
+      this.ToSave.celular = "";
+      this.ToSave.tiene_trabajo = null;
+      this.ToSave.trabajo_remunerado = null;
+      this.ToSave.tiene_pension_65 = null;
+      this.ToSave.tiene_seguro = null;
+      this.ToSave.tiene_discapacidad = null;
+      this.ToSave.discapacidad = "";
+      this.ToSave.toma_medicamentos = null;
+      this.ToSave.descripcion_medicamentos = "";
+      this.ToSave.viuda_desde = "";
+      this.ToSave.nombre_pareja = "";
+      this.ToSave.religion = "";
+      this.ToSave.sabe_de_dios = null;
+      this.ToSave.conoce_de_dios = null;
+      this.ToSave.relacion_con_jesus = null;
+      this.ToSave.fecha_de_aceptacion = "";
+      this.ToSave.asiste_a_una_iglesia = null;
+      this.ToSave.iglesia = "";
+      this.ToSave.desde_que_fecha = "";
+      this.ToSave.le_interesa_jesus = null;
+      this.ToSave.observaciones = null;
+      this.ToSave.estado = 1;
     },
     openModalUpdate: function(_index) {
       this.$root.$emit("bv::show::modal", "modalUpdate", "#btnUpdate");
@@ -1400,31 +1767,51 @@ export default {
       this.ToUpdate.nombres = this.viudas.data[_index].nombres;
       this.ToUpdate.apellidos = this.viudas.data[_index].apellidos;
       this.ToUpdate.dni = this.viudas.data[_index].dni;
-      this.ToUpdate.fecha_nacimiento = this.viudas.data[_index].fecha_nacimiento;
+      this.ToUpdate.fecha_nacimiento = this.viudas.data[
+        _index
+      ].fecha_nacimiento;
       this.ToUpdate.region = this.viudas.data[_index].region;
       this.ToUpdate.ciudad = this.viudas.data[_index].ciudad;
       this.ToUpdate.direccion = this.viudas.data[_index].direccion;
       this.ToUpdate.referencia = this.viudas.data[_index].referencia;
       this.ToUpdate.celular = this.viudas.data[_index].celular;
       this.ToUpdate.tiene_trabajo = this.viudas.data[_index].tiene_trabajo;
-      this.ToUpdate.trabajo_remunerado = this.viudas.data[_index].trabajo_remunerado;
-      this.ToUpdate.tiene_pension_65 = this.viudas.data[_index].tiene_pension_65;
+      this.ToUpdate.trabajo_remunerado = this.viudas.data[
+        _index
+      ].trabajo_remunerado;
+      this.ToUpdate.tiene_pension_65 = this.viudas.data[
+        _index
+      ].tiene_pension_65;
       this.ToUpdate.tiene_seguro = this.viudas.data[_index].tiene_seguro;
-      this.ToUpdate.tiene_discapacidad = this.viudas.data[_index].tiene_discapacidad;
+      this.ToUpdate.tiene_discapacidad = this.viudas.data[
+        _index
+      ].tiene_discapacidad;
       this.ToUpdate.discapacidad = this.viudas.data[_index].discapacidad;
-      this.ToUpdate.toma_medicamentos = this.viudas.data[_index].toma_medicamentos;
-      this.ToUpdate.descripcion_medicamentos = this.viudas.data[_index].descripcion_medicamentos;
+      this.ToUpdate.toma_medicamentos = this.viudas.data[
+        _index
+      ].toma_medicamentos;
+      this.ToUpdate.descripcion_medicamentos = this.viudas.data[
+        _index
+      ].descripcion_medicamentos;
       this.ToUpdate.viuda_desde = this.viudas.data[_index].viuda_desde;
       this.ToUpdate.nombre_pareja = this.viudas.data[_index].nombre_pareja;
       this.ToUpdate.religion = this.viudas.data[_index].religion;
       this.ToUpdate.sabe_de_dios = this.viudas.data[_index].sabe_de_dios;
       this.ToUpdate.conoce_de_dios = this.viudas.data[_index].conoce_de_dios;
-      this.ToUpdate.relacion_con_jesus = this.viudas.data[_index].relacion_con_jesus;
-      this.ToUpdate.fecha_de_aceptacion = this.viudas.data[_index].fecha_de_aceptacion;
-      this.ToUpdate.asiste_a_una_iglesia = this.viudas.data[_index].asiste_a_una_iglesia;
+      this.ToUpdate.relacion_con_jesus = this.viudas.data[
+        _index
+      ].relacion_con_jesus;
+      this.ToUpdate.fecha_de_aceptacion = this.viudas.data[
+        _index
+      ].fecha_de_aceptacion;
+      this.ToUpdate.asiste_a_una_iglesia = this.viudas.data[
+        _index
+      ].asiste_a_una_iglesia;
       this.ToUpdate.iglesia = this.viudas.data[_index].iglesia;
       this.ToUpdate.desde_que_fecha = this.viudas.data[_index].desde_que_fecha;
-      this.ToUpdate.le_interesa_jesus = this.viudas.data[_index].le_interesa_jesus;
+      this.ToUpdate.le_interesa_jesus = this.viudas.data[
+        _index
+      ].le_interesa_jesus;
       this.ToUpdate.observaciones = this.viudas.data[_index].observaciones;
       this.ToUpdate.estado = this.viudas.data[_index].estado;
     },

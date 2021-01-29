@@ -38,9 +38,7 @@ const routes = [
     name: "viudas",
     props: true,
     component: () =>
-      import(
-        /* webpackChunkName: "Viudas" */ "../views/viudas/Index.vue"
-      ),
+      import(/* webpackChunkName: "Viudas" */ "../views/viudas/Index.vue"),
     beforeEnter: requireAuth
   },
   {
@@ -58,16 +56,13 @@ const routes = [
     name: "viuda",
     props: true,
     component: () =>
-      import(
-        /* webpackChunkName: "Viuda" */ "../views/Viuda.vue"
-      ),
+      import(/* webpackChunkName: "Viuda" */ "../views/Viuda.vue"),
     beforeEnter: requireAuth
   },
   {
     path: "/perfil",
     name: "perfil",
-    component: () =>
-      import(/* webPackChunkName: "Perfil" */ "../views/Perfil"),
+    component: () => import(/* webPackChunkName: "Perfil" */ "../views/Perfil"),
     beforeEnter: requireAuth
   },
   {

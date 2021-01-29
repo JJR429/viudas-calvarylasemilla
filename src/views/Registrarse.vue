@@ -27,7 +27,7 @@
             <div class="col-lg-7">
               <div class="card rounded-lg text-dark">
                 <div class="card-header py-4 text-dark">
-                 Únete al equipo de Calvary la Semilla.
+                  Únete al equipo de Calvary la Semilla.
                 </div>
                 <div class="card-body">
                   <form @submit.prevent="register">
